@@ -68,7 +68,7 @@ Environmental_AI_Healthcare_System/
 ### Setup Steps
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/logitechsoumili/Environmental_AI_Healthcare_System.git
    cd Environmental_AI_Healthcare_System
    ```
 2. Create and activate a virtual environment:
