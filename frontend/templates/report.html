@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report | Environmental AI Healthcare System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body data-page="report">
+  <div class="page-bg"></div>
+  <header class="topbar container">
+    <a href="/" class="brand">Environmental AI Healthcare System</a>
+    <nav class="navlinks">
+      <a href="/">Home</a>
+      <a href="/report">Report</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main class="container report-main">
+    <section class="glass section">
+      <h1>Environmental Analysis Report</h1>
+      <p>Upload an image to get AI-based environmental health insights.</p>
+      <div class="upload-row">
+        <input type="file" id="imageInput" accept="image/*">
+        <button class="btn btn-primary" id="analyzeBtn">Analyze Environment</button>
+      </div>
+    </section>
+
+    <section id="results" class="split" hidden>
+      <div class="glass panel left-panel">
+        <h3>Image & Prediction</h3>
+        <div class="preview-wrap">
+          <img id="preview" alt="Uploaded preview">
+        </div>
+        <p class="meta-line">Prediction: <span id="predictionBadge" class="badge">Pending</span></p>
+        <p class="meta-line">Confidence: <strong id="confidence">0%</strong></p>
+        
+
+  <div class="confidence-wrapper">
+    <div id="confidenceBar"></div>
+  </div>
+      </div>
+
+      <div class="right-panel">
+        <article class="glass panel">
+          <h3>Diseases</h3>
+          <ul id="diseases" class="list"></ul>
+        </article>
+        <article class="glass panel">
+          <h3>Preventive Measures</h3>
+          <ul id="prevention" class="list"></ul>
+        </article>
+        <article class="glass panel">
+          <h3>Health Guidelines</h3>
+          <ul id="guidelines" class="list"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="followupSection" class="glass section" hidden>
+      <h2>Ask Follow-up Questions</h2>
+      <div class="qa-row">
+        <input type="text" id="question" placeholder="Ask about this environment and health risk...">
+        <button class="btn btn-secondary" id="askBtn">Ask</button>
+      </div>
+      <div id="answer" class="answer-box">AI answer will appear here after analysis.</div>
+      <button class="btn btn-primary" id="downloadBtn">Download Report</button>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

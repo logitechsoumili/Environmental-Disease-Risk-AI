@@ -1,0 +1,11 @@
+tensorflow
+torch
+transformers
+faiss-cpu
+flask
+ollama
+fastapi
+uvicorn
+pillow
+sentence-transformers
+reportlab
