@@ -20,6 +20,12 @@ function byId(id) {
   return document.getElementById(id);
 }
 
+function toConfidencePercent(value) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return 0;
+  return numeric > 1 ? numeric : numeric * 100;
+}
+
 async function parseJsonOrError(response) {
   const contentType = response.headers.get("content-type") || "";
 
@@ -184,7 +190,7 @@ function resetAnalysisUI() {
     predictionBadge.className = "badge";
     predictionBadge.textContent = "Pending";
   }
-  if (confidence) confidence.textContent = "0%";
+  if (confidence) confidence.textContent = "0.00%";
   if (confidenceBar) confidenceBar.style.width = "0%";
 
   renderList("diseases", []);
@@ -265,12 +271,12 @@ async function analyze(event) {
     const confidence = byId("confidence");
     const confidenceBar = byId("confidenceBar");
 
-    const percent = data.confidence > 1
-      ? data.confidence
-      : Math.round(data.confidence * 100);
+    const percent = toConfidencePercent(data.confidence);
+    const clampedPercent = Math.max(0, Math.min(100, percent));
+    const displayPercent = clampedPercent.toFixed(2);
 
-    if (confidence) confidence.textContent = `${percent}%`;
-    if (confidenceBar) confidenceBar.style.width = `${percent}%`;
+    if (confidence) confidence.textContent = `${displayPercent}%`;
+    if (confidenceBar) confidenceBar.style.width = `${clampedPercent}%`;
 
     renderList("diseases", data.diseases || []);
     renderList("prevention", data.preventive_measures || []);
@@ -363,7 +369,7 @@ async function downloadReport(event) {
 
   const payload = {
     prediction: labels[latestReportData.prediction] || latestReportData.prediction,
-    confidence: latestReportData.confidence,
+    confidence: toConfidencePercent(latestReportData.confidence).toFixed(2),
     diseases: latestReportData.diseases || [],
     preventive_measures: latestReportData.preventive_measures || [],
     health_guidelines: latestReportData.health_guidelines || [],

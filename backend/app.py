@@ -291,13 +291,17 @@ def download_report():
     # Data sections
     prediction = data.get("prediction", "N/A")
     confidence = data.get("confidence", "N/A")
+    try:
+        confidence_text = f"{float(confidence):.2f}"
+    except (TypeError, ValueError):
+        confidence_text = html.escape(str(confidence))
     diseases = data.get("diseases", []) or []
     preventive_measures = data.get("preventive_measures", []) or []
     health_guidelines = data.get("health_guidelines", []) or []
     followup_qas = data.get("followup_qas", []) or []
 
     elements.append(Paragraph(f"<b>Detected Environment:</b> {html.escape(str(prediction))}", text_style))
-    elements.append(Paragraph(f"<b>Model Confidence:</b> {html.escape(str(confidence))}%", text_style))
+    elements.append(Paragraph(f"<b>Model Confidence:</b> {confidence_text}%", text_style))
     elements.append(Spacer(1, 15))
 
     elements.append(Paragraph("Health Risks", section_style))
