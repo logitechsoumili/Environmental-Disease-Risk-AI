@@ -1,14 +1,10 @@
 # Environmental AI Healthcare System
 
 ## Our Website Demo
- 
-🎬 Click the vedio below
 
-<p align="center">
-  <a href="https://drive.google.com/file/d/1P83xKO-T5maU8C2ZnRI6dNnvhwIociz6/view?usp=drive_link">
-    <img src="https://github.com/user-attachments/assets/dbd24306-1565-43e1-82b6-8d6b0a7bedad" alt="Watch Demo Video" width="700">
-  </a>
-</p>
+
+
+ 
 
 ## Project Overview
 The **Environmental AI Healthcare System** is an AI-powered platform that analyzes environmental images and generates context-aware public health advisories. It combines computer vision and retrieval-augmented generation (RAG) to classify environmental conditions and provide actionable healthcare guidance through a web interface.
