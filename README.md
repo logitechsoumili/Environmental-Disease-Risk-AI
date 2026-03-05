@@ -25,19 +25,23 @@ The system is designed for local deployment and integrates:
 
 ### Home Page
 
-![Home Page](screenshorts/home_page.png)
 
-![Home Page](screenshorts/faq.png)
+<img width="1919" height="865" alt="home_page" src="https://github.com/user-attachments/assets/68ee9d36-882e-4557-b146-167f982faafc" />
+
+
+<img width="1905" height="870" alt="faq" src="https://github.com/user-attachments/assets/4218019d-fa1e-41cd-b202-f9ba294cd8e7" />
 
 ### Report Page
 
-![Report Page](screenshorts/report.png)
+<img width="1919" height="867" alt="report" src="https://github.com/user-attachments/assets/2b3db2b9-f162-47b0-a31b-f661a2d0ff33" />
 
-![Report Page](screenshorts/home.png)
+
+<img width="1916" height="872" alt="home" src="https://github.com/user-attachments/assets/213891d9-1580-482f-a40a-babd971c3795" />
 
 ### About Page
 
-![About Page](screenshorts/about.png)
+
+<img width="1919" height="869" alt="about" src="https://github.com/user-attachments/assets/28e897a4-dd45-4a52-b492-096688ce9950" />
 
 - Environmental image upload and processing
 - CNN-based classification of:
