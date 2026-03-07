@@ -1,14 +1,10 @@
 # Environmental AI Healthcare System
 
-## Our Website Demo
 
-<p align="center">
-  <a href="https://drive.google.com/file/d/1P83xKO-T5maU8C2ZnRI6dNnvhwIociz6/view?usp=drive_link">
-    <img alt="Watch Demo Video" src="https://img.shields.io/badge/%E2%96%B6-Watch%20Demo%20Video‑ff69b4?style=for-the-badge&logo=github&logoColor=white">
-  </a>
-</p>
 
-🎬 Click the button above to watch the video!
+
+ 
+
 ## Project Overview
 The **Environmental AI Healthcare System** is an AI-powered platform that analyzes environmental images and generates context-aware public health advisories. It combines computer vision and retrieval-augmented generation (RAG) to classify environmental conditions and provide actionable healthcare guidance through a web interface.
 
@@ -20,12 +16,26 @@ The system is designed for local deployment and integrates:
 - ReportLab for downloadable PDF report generation
 
 ## Features
+
+## Website Preview
+
+### Home Page
+
+<img width="1919" height="865" alt="home_page" src="https://github.com/user-attachments/assets/68ee9d36-882e-4557-b146-167f982faafc" />
+
+### Report Page
+
 - Environmental image upload and processing
 - CNN-based classification of:
-  - Air pollution
-  - Garbage/dirty area
-  - Stagnant water
-  - Hygienic environment
+   - Air pollution
+   - Garbage/dirty area
+   - Stagnant water
+   - Hygienic environment
+
+<img width="1919" height="867" alt="report" src="https://github.com/user-attachments/assets/2b3db2b9-f162-47b0-a31b-f661a2d0ff33" />
+
+
+
 - RAG pipeline for grounded health recommendations
 - AI-generated advisory sections:
   - Possible diseases
@@ -33,6 +43,15 @@ The system is designed for local deployment and integrates:
   - Health guidelines
 - Browser-based results dashboard
 - PDF report export including image and advisory summary
+
+
+<img width="1916" height="872" alt="home" src="https://github.com/user-attachments/assets/213891d9-1580-482f-a40a-babd971c3795" />
+
+### About Page
+
+<img width="1919" height="869" alt="about" src="https://github.com/user-attachments/assets/28e897a4-dd45-4a52-b492-096688ce9950" />
+
+
 
 ## System Architecture
 1. **Input Layer**: User uploads an environmental image.
@@ -57,6 +76,10 @@ Environmental_AI_Healthcare_System/
 |       |-- home.html
 |       |-- report.html
 |       `-- about.html
+|-- notebooks/
+|    |-- 01_image_data_preprocessing.ipynb
+|    |-- 02_transfer_learning.ipynb
+|    |-- 03_rag_implementation.ipynb
 |-- model/
 |   `-- efficientnet_model.keras
 |-- rag/
