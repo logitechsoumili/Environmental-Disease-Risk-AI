@@ -1,6 +1,5 @@
 # Environmental AI Healthcare System
 
-## Our Website Demo
 
 
 
