@@ -346,17 +346,34 @@ async function submitImageForAnalysis(formData, loadingLabel, previewUrl) {
 }
 
 function stopCameraStream() {
-  if (!cameraStream) return;
-  cameraStream.getTracks().forEach((track) => track.stop());
-  cameraStream = null;
-
   const video = byId("video");
   const captureBtn = byId("capture");
+  if (cameraStream) {
+    cameraStream.getTracks().forEach((track) => track.stop());
+    cameraStream = null;
+  }
+
   if (video) {
     video.srcObject = null;
     video.hidden = true;
   }
   if (captureBtn) captureBtn.disabled = true;
+  updateCameraToggleUI(false);
+}
+
+function updateCameraToggleUI(isCameraOn) {
+  const startCameraBtn = byId("startCamera");
+  if (!startCameraBtn) return;
+
+  if (isCameraOn) {
+    startCameraBtn.textContent = "Turn Off";
+    startCameraBtn.classList.remove("btn-secondary");
+    startCameraBtn.classList.add("btn-danger");
+  } else {
+    startCameraBtn.textContent = "Start Camera";
+    startCameraBtn.classList.remove("btn-danger");
+    startCameraBtn.classList.add("btn-secondary");
+  }
 }
 
 async function startCamera(event) {
@@ -382,10 +399,23 @@ async function startCamera(event) {
     video.srcObject = cameraStream;
     video.hidden = false;
     if (captureBtn) captureBtn.disabled = false;
+    updateCameraToggleUI(true);
     showToast("Camera started.", "info");
   } catch (_error) {
+    updateCameraToggleUI(false);
     showToast("Unable to access camera. Please allow permission.", "error");
   }
+}
+
+async function toggleCamera(event) {
+  if (event) event.preventDefault();
+
+  if (cameraStream) {
+    stopCameraStream();
+    return;
+  }
+
+  await startCamera();
 }
 
 async function captureImage(event) {
@@ -595,7 +625,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (analyzeBtn) analyzeBtn.addEventListener("click", analyze);
-  if (startCameraBtn) startCameraBtn.addEventListener("click", startCamera);
+  if (startCameraBtn) {
+    updateCameraToggleUI(false);
+    startCameraBtn.addEventListener("click", toggleCamera);
+  }
+  if (captureBtn) captureBtn.disabled = true;
   if (captureBtn) captureBtn.addEventListener("click", captureImage);
   if (askBtn) askBtn.addEventListener("click", ask);
   if (downloadBtn) downloadBtn.addEventListener("click", downloadReport);

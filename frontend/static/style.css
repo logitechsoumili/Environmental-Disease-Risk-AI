@@ -203,6 +203,30 @@ html, body {
   box-shadow: 0 10px 24px rgba(15, 111, 178, 0.3);
 }
 
+.btn-danger {
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.05) 46%, rgba(255, 255, 255, 0.18)),
+    linear-gradient(125deg, #ff4b4b 0%, #ff7a7a 52%, #c62828 100%);
+  color: #ffffff;
+  border: 1px solid rgba(140, 30, 30, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    0 10px 24px rgba(180, 30, 30, 0.28),
+    0 3px 0 rgba(110, 20, 20, 0.28);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(180, 30, 30, 0.32);
+  filter: saturate(1.06) brightness(1.02);
+}
+
+.btn-danger:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(150, 25, 25, 0.25);
+}
+
 .section {
   margin-top: var(--space-4);
   padding: 28px;
@@ -804,16 +828,10 @@ button:not(.btn):hover {
 }
 
 
-
-
-
-
-
 .right-panel .panel .panel-note,
 .right-panel .panel .list,
 .right-panel .panel li {
   color: #16343b !important;
   font-weight: 520 !important;
 }
-
 
