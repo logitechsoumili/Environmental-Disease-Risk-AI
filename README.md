@@ -74,6 +74,7 @@ The platform follows a pipeline architecture:
 4. **Generation Layer**: LLaMA 3.2 (via Ollama) generates structured, context-grounded health advisories
 5. **Application Layer**: Flask APIs serve analysis, follow-up Q&A, and frontend interactions
 6. **Reporting Layer**: ReportLab compiles predictions and advisories into downloadable PDF reports
+---
 
 ## Folder Structure
 ```text
@@ -110,7 +111,7 @@ Environmental_AI_Healthcare_System/
 - Python 3.10+
 - Ollama installed locally
 - LLaMA 3.2 model pulled in Ollama
-
+---
 ### Setup Steps
 1. Clone the repository and enter the project directory:
 ```bash
