@@ -28,7 +28,7 @@ Key capabilities:
 <img width="1910" height="868" alt="Screenshot 2026-03-08 193050" src="https://github.com/user-attachments/assets/bfcc6889-8002-4eac-92f2-1ac82ff016da" />
 
 
-- Environmental image upload and processing
+
 - ### Image Upload Analysis
 - Upload environmental images
 - AI-based risk detection
